@@ -1,7 +1,31 @@
+body{
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
 table{
-    height: 75vh;
-    width: 50vw;
+    height: 80vh;
+    width: 45vw;
     border: 2px solid rgb(29, 38, 125);
     margin: auto;
+    border-collapse: collapse;
     margin-top: 10vh;
+    
+}
+tbody{
+    background-image: url("checkerboard.png")
+}
+td{
+    border: 1px #5a5a5a00 solid;
+    margin: 0em;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+    width: 12%;
+    height: 12%;
+}
+tr{
+    margin: 0em ;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
