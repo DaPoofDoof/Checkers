@@ -11,118 +11,82 @@
 </head>
 
 <body>
+    <section id="colorChangingBox">
+        <h1 id="whichTurn">Blank's turn</h1>
+        <br>
+        <br>
+        <h4 class="colorTitle">Player 1 color:</h4>
+        <br>
+        <br>
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropdown-button">Select color</button>
+            <div id="player1-color" class="dropdown-content">
+                <button id="red">red</button>
+                <button id="blue">blue</button>
+                <button id="green">green</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4 class="colorTitle">Player 2 color:</h4>
+    </section>
+
+
+
     <table>
         <!-- ___________________________1111111111111111___________-->
         <tr id="row1">
-            <td class="col1">
-                
-            </td>
-            <td class="checker col2">
-                <p class="P1Checkers"></p>
-            </td>
-            <td class="col3">
-
-            </td>
-            <td class="checker col4">
-
-            </td>
-            <td class="col5">
-
-            </td>
-            <td class="checker col6">
-
-            </td>
-            <td class="col7">
-
-            </td>
-            <td class="checker col8">
-
-            </td>
-            
+            <td id="row1-col1" class="col1"></td>
+            <td id="row1-col2" class="checker col2"></td>
+            <td id="row1-col3" class="col3"></td>
+            <td id="row1-col4" class="checker col4"></td>
+            <td id="row1-col5" class="col5"></td>
+            <td id="row1-col6" class="checker col6"></td>
+            <td id="row1-col7" class="col7"></td>
+            <td id="row1-col8" class="checker col8"></td>
         </tr>
+
         <!-- ___________________________2222222222222222___________-->
+
         <tr id="row2">
-            <td class="checker col1">
-
-            </td>
-            <td class="col2">
-
-            </td>
-            <td class="checker col3">
-
-            </td>
-            <td class="col4">
-
-            </td>
-            <td class="checker col5">
-
-            </td>
-            <td class="col6">
-
-            </td>
-            <td class="checker col7">
-
-            </td>
-            <td class="col8">
-
-            </td>
-            
+            <td id="row2-col1" class="checker col1"></td>
+            <td id="row2-col2" class="col2"></td>
+            <td id="row2-col3" class="checker col3"></td>
+            <td id="row2-col4" class="col4"></td>
+            <td id="row2-col5" class="checker col5"></td>
+            <td id="row2-col6" class="col6"></td>
+            <td id="row2-col7" class="checker col7"></td>
+            <td id="row2-col8" class="col8"></td>
         </tr>
+
         <!-- ____________________________33333333333333333__________-->
         <tr id="row3">
-            <td class="col1">
-
-            </td>
-            <td class="checker col2">
-
-            </td>
-            <td class="col3">
-
-            </td>
-            <td class="checker col4">
-
-            </td>
-            <td class="col5">
-
-            </td>
-            <td class="checker col6">
-
-            </td>
-            <td class="col7">
-
-            </td>
-            <td class="checker col8">
-
-            </td>
+            <td id="row3-col1" class="col1"></td>
+            <td id="row3-col2" class="checker col2"></td>
+            <td id="row3-col3" class="col3"></td>
+            <td id="row3-col4" class="checker col4"></td>
+            <td id="row3-col5" class="col5"></td>
+            <td id="row3-col6" class="checker col6"></td>
+            <td id="row3-col7" class="col7"></td>
+            <td id="row3-col8" class="checker col8"></td>
         </tr>
+
         <!-- ____________________________44444444444444444__________-->
         <tr id="row4">
-            <td class="checker col1">
-
-            </td>
-            <td class="col2">
-
-            </td>
-            <td class="checker col3">
-
-            </td>
-            <td class="col4">
-
-            </td>
-            <td class="checker col5">
-
-            </td>
-            <td class="col6">
-
-            </td>
-            <td class="checker col7">
-
-            </td>
-            <td class="col8">
-
-            </td>
-            
+            <td id="row4-col1" class="col1"></td>
+            <td id="row4-col2" class="checker col2"></td>
+            <td id="row4-col3" class="col3"></td>
+            <td id="row4-col4" class="checker col4"></td>
+            <td id="row4-col5" class="col5"></td>
+            <td id="row4-col6" class="checker col6"></td>
+            <td id="row4-col7" class="col7"></td>
+            <td id="row4-col8" class="checker col8"></td>
         </tr>
+
         <!-- _____________________________55555555555555555_________-->
         <tr id="row5">
             <td class="col1">
@@ -149,7 +113,7 @@
             <td class="checker col8">
 
             </td>
-            
+
         </tr>
         <!-- ________________________________6666666666666666______-->
         <tr id="row6">
@@ -168,7 +132,7 @@
             <td class="checker col5">
 
             </td>
-            <td class="col6"> 
+            <td class="col6">
 
             </td>
             <td class="checker col7">
@@ -177,7 +141,7 @@
             <td class="col8">
 
             </td>
-            
+
         </tr>
         <!-- _______________________________77777777777777777_______-->
         <tr id="row7">
@@ -204,8 +168,9 @@
             </td>
             <td class="checker col8">
 
+
             </td>
-            
+
         </tr>
         <!-- ________________________________888888888888888888______-->
         <tr id="row8">
