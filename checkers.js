@@ -1,14 +1,22 @@
 let checkerSpot = document.getElementsByClassName("checker");
 let gloudiao = document.getElementById("clicksound");
 let checkerPiece;
-let red = document.getElementById("red");
-let green = document.getElementById("green");
-let blue = document.getElementById("blue");
-let yellow = document.getElementById("yellow");
-let pink = document.getElementById("pink");
-let purple = document.getElementById("purple");
-let maroon = document.getElementById("maroon");
+let P1red = document.getElementById("red");
+let P1green = document.getElementById("green");
+let P1blue = document.getElementById("blue");
+let P1yellow = document.getElementById("yellow");
+let P1pink = document.getElementById("pink");
+let P1purple = document.getElementById("purple");
+let P1maroon = document.getElementById("maroon");
+let P2red = document.getElementById("red");
+let P2green = document.getElementById("green");
+let P2blue = document.getElementById("blue");
+let P2yellow = document.getElementById("yellow");
+let P2pink = document.getElementById("pink");
+let P2purple = document.getElementById("purple");
+let P2maroon = document.getElementById("maroon");
 let P1Checkers = document.getElementsByClassName("P1Checkers");
+let P2Checkers = document.getElementsByClassName("P2Checkers");
 let turnBox = document.getElementById("colorChangingBox");
 
 function checkler() {
@@ -20,6 +28,9 @@ function checkler() {
 }
 
 
+function movePiece(test){
+    console.log(test);
+}
 
 
 function placeCheckers() {
@@ -45,44 +56,20 @@ function placeCheckers() {
 
 
 
-function toggleDropdown() {
 
-    var dropdownContent = document.getElementById("player1-color");
 
-    dropdownContent.classList.toggle("show");
-}
-
-window.onclick = function (event) {
-
-    if (!event.target.matches(".dropdown-button")) {
-
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-
-        for (var i = 0; i < dropdowns.length; i++) {
-
-            var openDropdown = dropdowns[i];
-
-            if (openDropdown.classList.contains("show")) {
-
-                openDropdown.classList.remove("show");
-            }
-        }
-    }
-};
-
-for (let i = 0; i < checkerSpot.length; i++) {
-
-    checkerSpot[i].addEventListener("click", checkler);
-}
 
 function colorChanging() {
 
-    let color = this.id;
-
+    let colorName = this.id;
+    let color = colorName.substring(1)
+    let color2 = P2Checkers[0].style.backgroundColor
     console.log(color);
 
-    turnBox.style.backgroundColor = color;
-    
+    if (!color == color2){
+    for (i=0; i < 12; i++)
+    P1Checkers[i].style.backgroundColor = color;
+    }
     // P1Checkers[0].style.backgroundColor = color;
 }
 
@@ -92,16 +79,30 @@ function colorChanging2() {
 
     console.log(color);
 
-    document.getElementById('colorTitle').style.backgroundColor = color;
+    P1Checkers[0].style.backgroundColor = color;
     
     // P1Checkers[0].style.backgroundColor = color;
 }
 
-red.addEventListener('click', colorChanging);
-blue.addEventListener('click', colorChanging);
-green.addEventListener('click', colorChanging);
-yellow.addEventListener('click', colorChanging);
-pink.addEventListener('click', colorChanging);
-purple.addEventListener('click', colorChanging);
-maroon.addEventListener('click', colorChanging);
+P1red.addEventListener('click', colorChanging);
+P1blue.addEventListener('click', colorChanging);
+P1green.addEventListener('click', colorChanging);
+P1yellow.addEventListener('click', colorChanging);
+P1pink.addEventListener('click', colorChanging);
+P1purple.addEventListener('click', colorChanging);
+P1maroon.addEventListener('click', colorChanging);
+P2red.addEventListener('click', colorChanging);
+P2blue.addEventListener('click', colorChanging);
+P2green.addEventListener('click', colorChanging);
+P2yellow.addEventListener('click', colorChanging);
+P2pink.addEventListener('click', colorChanging);
+P2purple.addEventListener('click', colorChanging);
+P2maroon.addEventListener('click', colorChanging);
 placeCheckers();
+
+
+function eventListeners(){
+    for(p=1; P1Checkers.length >p; p++){
+        P1Checkers[p].addEventListener('click', movePiece(p))
+    }
+}
