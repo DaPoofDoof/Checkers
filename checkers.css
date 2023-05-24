@@ -18,7 +18,7 @@ table{
     margin: auto;
     border-radius: 100px;
     background-color: blanchedalmond;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 tbody{
     background-image: url("checkerboard.png");
@@ -62,4 +62,12 @@ tr{
 .inner{
     text-indent: -9999px;
     margin: 0;
+}
+.P2Checkers{
+    height: 70%;
+    width: 70%;
+    margin: auto;
+    border-radius: 100px;
+    background-color: rgb(94, 77, 105);
+    margin-bottom: 10%;
 }
