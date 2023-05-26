@@ -40,15 +40,33 @@ function movePiece(){
     parent1 = parent1.parentElement;
     parent1 = parent1.id;
     parent1 = parent1.substring(3);
-    evenPiece = parseInt(checkerNum) + 3;
-    evenPiece = evenPiece.parentElement;
-    evenPiece = evenPiece.parentElement;
+    // evenPiece = parseInt(checkerNum) + 3;
+    document.getElementById(parseInt(checkerNum) + 4).removeChild(document.getElementById(parseInt(checkerNum) + 5).lastChild);
+    document.getElementById(parseInt(checkerNum) + 5).removeChild(document.getElementById(parseInt(checkerNum) + 5).lastChild);
+
     if(parent1 % 2 == 0){
         availableSpot1 = document.createElement('p');
         availableSpot1.classList.add("availableSpots");
         availableSpot1.setAttribute("id", parseInt(checkerNum) + 3);
-        console.log(evenPiece);
-        document.getElementById(parseInt(checkerNum) + 3).appendChild(availableSpot1);
+        if(document.getElementById(parseInt(checkerNum) + 3).hasChildNodes()){
+            return;
+        }else{
+            document.getElementById(parseInt(checkerNum) + 3).appendChild(availableSpot1);
+        }
+        
+    }else if(parent1 % 2 == 1){
+        availableSpot1 = document.createElement('p');
+        availableSpot2 = document.createElement('p');
+        availableSpot1.classList.add("availableSpots");
+        availableSpot2.classList.add("availableSpots");
+        availableSpot1.setAttribute("id", parseInt(checkerNum) + 4);
+        availableSpot2.setAttribute("id", parseInt(checkerNum) + 5);
+        if(document.getElementById(parseInt(checkerNum) + 4).hasChildNodes() || availableSpot2.setAttribute("id", parseInt(checkerNum) + 5)){
+            return;
+        }else{
+            document.getElementById(parseInt(checkerNum) + 4).appendChild(availableSpot1);
+            document.getElementById(parseInt(checkerNum) + 5).appendChild(availableSpot2);
+        }
     }
 
 
@@ -87,7 +105,12 @@ function placeCheckers() {
     }
 }
 
+function dropOutMenu() {
 
+    let pullOutTab = getElementById('pullTab')
+
+    
+}
 
 
 

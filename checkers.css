@@ -9,8 +9,6 @@
 
 }
 
-
-
 .dropdown-content {
     display: none;
     align-items: center;
@@ -21,18 +19,30 @@
    
     z-index: 1;
   }
-  #selectP1Color{
+
+#selectP1Color{
     background-color: #5b6997;
-    border: 3px rgb(41, 44, 41) solid;
-    border-radius: 1em;
+    border: 0px #292c29 solid;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    margin-right: none;
+    width: 55px;
   }
-  
-  .dropdown-content button {
-    color: rgb(0, 0, 0);
+
+#selectP2Color{
+    background-color: #5b6997;
+    border: 0px #292c29 solid;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    margin-right: none;
+    width: 55px;
+  }
+
+.dropdown-content button {
+
     padding: 12px 16px;
-    border: #1b1919 2px solid;
-    background-color: rgb(19, 17, 15);
-    border-radius: 2em;
+    border: #1b1919 0px solid;
+    background-color: #ffffff00;
     text-decoration: none;
     align-items: center;
     display: block;
@@ -44,57 +54,53 @@
   }
   .dropdown:hover .dropdown-content {
     display: block;
-    border: #868078 5px solid;
-    border-radius: 2em;
+    border: #868078 3px solid;
+    border-radius: .5em;
     align-items: center;
   }
+#pullTab{
+width: 5vw;
+height: 5vh;
+float: left;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 body{
     overflow-y: auto;
     overflow-x: auto;
     background-color: #202020;
-}
+  }
 
 table{
     height: 45vw;
     width: 45vw;
-    margin: auto;
+    margin-right: 0vw;
     border-collapse: collapse;
     margin-top: auto;
-    
-}
+    float: left;
+    /*transform: translateX(-400px);*/
+  }
 
 tbody{
     background-image: url("checkerboard.png");
     background-size: 100%, 100%;
     image-rendering: pixelated;
+
 }
 td{
-    border: 2px #F79327 solid;
+    border: 2px #ffffff solid;
     margin: 0em;
     border-collapse: collapse;
     border-spacing: 0;
     padding: 0;
     width: 12%;
+    
     height: 12%;
 }
 tr{
     margin: 0em ;
     border-collapse: collapse;
     border-spacing: 0;
+    
 }
 #colorChangingBox{
     width: 35vw;
@@ -103,9 +109,10 @@ tr{
     margin-left: 3em;
     margin-top: 3em;
     margin-right: 0;
-    border: 10px #1b1919 solid;
-    border-radius: 3em;
+    border: 2px #ffffff solid;
+    border-radius: 1em;
     float: left;
+    /* transform: translateX(-1000px); */
 }
 #whichTurn{
     font-size: 70px;
@@ -133,10 +140,14 @@ tr{
     height: 75%;
     animation-name:checkerGrow ;
     animation-duration: .1s;
-
-
-
 }
+
+*
+{
+color: #ffffff
+}
+
+
 .checker:hover{
     background-color: rgb(7, 32, 143);
 }
@@ -145,14 +156,15 @@ tr{
     width: 70%;
     margin: auto;
     border-radius: 100px;
-    background-color: rgb(94, 77, 105);
+    background-color: #5e4d69;
     margin-bottom: 10%;
 }
+
 .availableSpots{
     background-color: rgb(33, 42, 62);
     height: 40%;
     width: 40%;
     margin: auto;
     border-radius: 100px;
-    margin-bottom: 30%;
+    margin-bottom: 0%;
 }
