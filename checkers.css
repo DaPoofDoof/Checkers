@@ -1,3 +1,16 @@
+@keyframes checkerGrow{
+
+    0%{width: 70%;
+       height: 70%;}
+    
+
+    100%{width: 75%;
+       height: 75%;}
+
+}
+
+
+
 .dropdown-content {
     display: none;
     align-items: center;
@@ -63,14 +76,7 @@ table{
     margin-top: auto;
     
 }
-.P1Checkers{
-    height: 70%;
-    width: 70%;
-    margin: auto;
-    border-radius: 100px;
-    background-color: blanchedalmond;
-    margin-bottom: 10%;
-}
+
 tbody{
     background-image: url("checkerboard.png");
     background-size: 100%, 100%;
@@ -113,6 +119,26 @@ tr{
 .inner{
     text-indent: -9999px;
     margin: 0;
+}
+.P1Checkers{
+    height: 70%;
+    width: 70%;
+    margin: auto;
+    border-radius: 100px;
+    background-color: blanchedalmond;
+    margin-bottom: 10%;
+}
+.P1Checkers:hover{
+    width: 75%;
+    height: 75%;
+    animation-name:checkerGrow ;
+    animation-duration: .1s;
+
+
+
+}
+.checker:hover{
+    background-color: rgb(7, 32, 143);
 }
 .P2Checkers{
     height: 70%;

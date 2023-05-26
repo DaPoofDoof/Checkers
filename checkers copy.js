@@ -24,7 +24,7 @@ let selectP2Color = document.getElementById("selectP2Color")
 let boxID = document.getElementsByClassName("checker");
 let availableSpot1;
 let availableSpot2;
-let evenPiece;
+let 
 
 
 function checkler() {
@@ -40,14 +40,11 @@ function movePiece(){
     parent1 = parent1.parentElement;
     parent1 = parent1.id;
     parent1 = parent1.substring(3);
-    evenPiece = parseInt(checkerNum) + 3;
-    evenPiece = evenPiece.parentElement;
-    evenPiece = evenPiece.parentElement;
     if(parent1 % 2 == 0){
         availableSpot1 = document.createElement('p');
         availableSpot1.classList.add("availableSpots");
         availableSpot1.setAttribute("id", parseInt(checkerNum) + 3);
-        console.log(evenPiece);
+        if(parseInt(checkerNum) + 3)
         document.getElementById(parseInt(checkerNum) + 3).appendChild(availableSpot1);
     }
 
