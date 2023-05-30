@@ -22,9 +22,11 @@ let checkerNum;
 let selectP1Color = document.getElementById("selectP1Color")
 let selectP2Color = document.getElementById("selectP2Color")
 let boxID = document.getElementsByClassName("checker");
-let availableSpot1;
-let availableSpot2;
+let availableSpotArray = ["filler"];
 let evenPiece;
+let parent1;
+let pulledOut = 1;
+
 
 
 function checkler() {
@@ -34,49 +36,52 @@ function checkler() {
 }
 
 
-function movePiece(){
+function checkAvaliableSpots(){
     checkerNum = event.target.id;
-    let parent1 = event.target.parentElement;
+    parent1 = event.target.parentElement;
     parent1 = parent1.parentElement;
     parent1 = parent1.id;
     parent1 = parent1.substring(3);
-    // evenPiece = parseInt(checkerNum) + 3;
-    document.getElementById(parseInt(checkerNum) + 4).removeChild(document.getElementById(parseInt(checkerNum) + 5).lastChild);
-    document.getElementById(parseInt(checkerNum) + 5).removeChild(document.getElementById(parseInt(checkerNum) + 5).lastChild);
-
-    if(parent1 % 2 == 0){
-        availableSpot1 = document.createElement('p');
-        availableSpot1.classList.add("availableSpots");
-        availableSpot1.setAttribute("id", parseInt(checkerNum) + 3);
-        if(document.getElementById(parseInt(checkerNum) + 3).hasChildNodes()){
-            return;
-        }else{
-            document.getElementById(parseInt(checkerNum) + 3).appendChild(availableSpot1);
-        }
-        
-    }else if(parent1 % 2 == 1){
-        availableSpot1 = document.createElement('p');
-        availableSpot2 = document.createElement('p');
-        availableSpot1.classList.add("availableSpots");
-        availableSpot2.classList.add("availableSpots");
-        availableSpot1.setAttribute("id", parseInt(checkerNum) + 4);
-        availableSpot2.setAttribute("id", parseInt(checkerNum) + 5);
-        if(document.getElementById(parseInt(checkerNum) + 4).hasChildNodes() || availableSpot2.setAttribute("id", parseInt(checkerNum) + 5)){
-            return;
-        }else{
-            document.getElementById(parseInt(checkerNum) + 4).appendChild(availableSpot1);
-            document.getElementById(parseInt(checkerNum) + 5).appendChild(availableSpot2);
-        }
+    checkerNum = parseInt(checkerNum);
+    availableSpot = document.createElement('p');
+    availableSpot.classList.add("hiddenAvailableSpots");
+    for(i=1; i<=32; i++){
+        evenPiece = "availableSpot" + i;
+        availableSpotArray.push(evenPiece);
+        availableSpotArray[i] = document.createElement('p');
+        availableSpotArray[i].classList.add("hiddenAvailableSpots");
+        availableSpotArray[i].classList.remove("availableSpots");
+        document.getElementById(i).appendChild(availableSpotArray[i]);
     }
 
 
+    if(parent1 % 2 == 0){
+        
+        
+        availableSpot.setAttribute("id", checkerNum + 3);
+        if(document.getElementById(checkerNum + 3).hasChildNodes()){
+            return;
+        }else{
+            document.getElementById(checkerNum + 3).appendChild(availableSpot);
+        }
+        
+    }else if(parent1 % 2 == 1){        
+        // availableSpot.setAttribute("id", checkerNum + 4);
+        // availableSpot.setAttribute("id", checkerNum + 5);
+        if(document.getElementById(checkerNum + 4).hasChildNodes > 1 || document.getElementById(checkerNum + 5).hasChildNodes > 1){
+           
+            return;
+        }else{
+
+            availableSpotArray[checkerNum + 4].classList.remove("hiddenAvailableSpots");
+            availableSpotArray[checkerNum + 4].classList.add("availableSpots");
+            availableSpotArray[checkerNum + 5].classList.remove("hiddenAvailableSpots");
+            availableSpotArray[checkerNum + 5].classList.add("availableSpots");
+        }
+        
+    }
 
 
-    console.log(checkerNum);
-    console.log(parent1)
-
-    // checkerNum = event.target.parentElement.id;
-    // console.log(checkerNum)
     
 }
 
@@ -107,8 +112,22 @@ function placeCheckers() {
 
 function dropOutMenu() {
 
-    let pullOutTab = getElementById('pullTab')
 
+   if (pulledOut == 0){
+
+    document.getElementById('colorChangingBox').style.transform = "translateX(-900px)";
+    document.getElementById('tableID').style.transform = "translateX(-400px)";
+    document.getElementById('pullTab').style.transform = "translateX(-750px)";
+    pulledOut = 1
+
+} else if (pulledOut == 1){
+    let test1 = document.getElementById('colorChangingBox');
+    document.getElementById('colorChangingBox').style.transform = "translateX(0)";
+    document.getElementById('tableID').style.transform = "translateX(0)";
+    document.getElementById('pullTab').style.transform = "translateX(0)";
+    pulledOut = 0
+    
+}
     
 }
 
@@ -119,7 +138,7 @@ function colorChanging() {
     let colorName = this.id;
     let color = colorName.substring(2)
     console.log(color);
-    let color2 = P2Checkers[0].style.backgroundColor
+    let color2 = P2Checkers[0].style.backgroundColor;
     console.log(color2);
 
     if (color != color2){
@@ -162,7 +181,7 @@ P2yellow.addEventListener('click', colorChanging2);
 P2pink.addEventListener('click', colorChanging2);
 P2purple.addEventListener('click', colorChanging2);
 P2maroon.addEventListener('click', colorChanging2);
-
+document.getElementById('pullTab').addEventListener('click', dropOutMenu)
 
 
 placeCheckers();
@@ -171,7 +190,7 @@ eventListeners();
 
 function eventListeners(){
     for(p=0; P1Checkers.length >p; p++){
-        P1Checkers[p].addEventListener('click', movePiece);
+        P1Checkers[p].addEventListener('click', checkAvaliableSpots);
         // checkerSpot[p].addEventListener('click', movePiece)
     }
 }
