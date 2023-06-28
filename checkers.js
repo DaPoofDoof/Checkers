@@ -196,12 +196,12 @@ if (poop == "availableSpots" && document.getElementById(boxPlayerCheck).querySel
     event.target.appendChild(clickedOnPiece)
    
     clickedOnPiece.id = event.target.id
-    } //else {
-    //     for(i=1; i<= 32; i++){
-    //         availableSpotArray[i].classList.add("hiddenAvailableSpots");
-    //         availableSpotArray[i].classList.remove("availableSpots");
-    //     }
-    // }
+     } else {
+        for(p=1; p<= 32; p++){
+            availableSpotArray[p].classList.add("hiddenAvailableSpots");
+            availableSpotArray[p].classList.remove("availableSpots");
+        }
+    }
 
 
     for(i=1; i<= 32; i++){
