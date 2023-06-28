@@ -13,6 +13,7 @@ let evenPiece;
 let parent1;
 let pulledOut = 1;
 let clickedOnPiece;
+let numArray = [5,13,21,29];
 
 function colorChanging() {
     let p1color = document.getElementById("p1colorwheel").value
@@ -74,8 +75,8 @@ function checkAvaliableSpots(){
         if(document.getElementById(checkerNum + 3).querySelector('.P1Checkers') === null || 
         document.getElementById(checkerNum + 4).querySelector('.P1Checkers') === null){
            
-            availableSpotArray[checkerNum + 3].classList.remove("hiddenAvailableSpots");
-            availableSpotArray[checkerNum + 3].classList.add("availableSpots");
+            // availableSpotArray[checkerNum + 3].classList.remove("hiddenAvailableSpots");
+            // availableSpotArray[checkerNum + 3].classList.add("availableSpots");
             availableSpotArray[checkerNum + 4].classList.remove("hiddenAvailableSpots");
             availableSpotArray[checkerNum + 4].classList.add("availableSpots");
             
@@ -89,7 +90,7 @@ function checkAvaliableSpots(){
                 availableSpotArray[checkerNum + 3].classList.add("availableSpots");
                 availableSpotArray[checkerNum + 4].classList.remove("hiddenAvailableSpots");
                 availableSpotArray[checkerNum + 4].classList.add("availableSpots");
-               } else if (document.getElementById(checkerNum + 3).parentElement.id == document.getElementById(checkerNum + 3).parentElement.id){
+               } else if (document.getElementById(checkerNum + 3).parentElement.id == document.getElementById(checkerNum + 3).parentElement.id && !numArray.includes(checkerNum)){
                 availableSpotArray[checkerNum + 3].classList.remove("hiddenAvailableSpots");
                 availableSpotArray[checkerNum + 3].classList.add("availableSpots");
     
@@ -100,8 +101,6 @@ function checkAvaliableSpots(){
             }
             
             
-        }else{
-            return;
         }
         
     }else if(parent1 % 2 == 1){        
@@ -116,7 +115,7 @@ function checkAvaliableSpots(){
             availableSpotArray[checkerNum + 4].classList.add("availableSpots");
             availableSpotArray[checkerNum + 5].classList.remove("hiddenAvailableSpots");
             availableSpotArray[checkerNum + 5].classList.add("availableSpots");
-           } else if (document.getElementById(checkerNum + 4).parentElement.id == document.getElementById(checkerNum + 3).parentElement.id){
+           } else if (document.getElementById(checkerNum + 4).parentElement.id == document.getElementById(checkerNum + 4).parentElement.id){
             availableSpotArray[checkerNum + 4].classList.remove("hiddenAvailableSpots");
             availableSpotArray[checkerNum + 4].classList.add("availableSpots");
 
@@ -127,7 +126,9 @@ function checkAvaliableSpots(){
         }
         
     }
-
+    else{
+        return;
+    }
 
     
 }
